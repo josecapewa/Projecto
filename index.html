@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css" integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous">
+    <title>Document</title>
+    <script src="./assets/js/index.js"></script>
+</head>
+
+<body onload="NewGame()">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <h1 class="text-light display-6 col-sm-4" style="margin-left: 10%;">Boas-vindas!</h1>
+        <div class="container-fluid justify-content-end">
+            <ul class="navbar-nav nav">
+                <li class="nav-item">
+                    <a class="nav-link active" data-bs-toggle="tab" href="#home">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="tab" href="#menu1">Um pequeno jogo que fiz</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="tab-content navbar-expand-sm">
+        <div class="tab-pane container active" id="home">
+            <div class="container">
+                <h1>Uma Pequena História do Desenvolvimento Web</h1>
+                <p class="text">
+                    A ascensão da Internet na cultura convencional está amplamente correlacionada com a sua história como um meio visual. Como muitos outros sistemas e aplicativos de computador, foi necessária uma interface gráfica para levar a população em geral a entender o potencial da Internet. O computador pessoal não teria proliferado em todas as nossas casas e ambientes de trabalho sem o monitor, e ainda não se tornou amplamente usado até que planilhas eletrônicas, processadores de texto e videogames começaram a atrair usuários. Da mesma forma, os usuários não começaram a comprar na World Wide Web até o navegador da Web visual ter começado a se desenvolver no início dos anos 90. E desde então, mesmo que tenha havido melhorias drásticas na tecnologia e estética da web, algumas das primeiras técnicas de design da web perseveraram ao longo dos anos.
+                </p>
+                <h3>A Web Antiga</h3>
+                <p class="text">
+                    A idéia da Internet existia de alguma forma há pelo menos meio século antes de finalmente se tornar um utilitário doméstico comum nos anos 90. Concebida na década de 1980, a World Wide Web ganhou força significativa com a introdução do navegador Mosaic em 1993. Logo depois, as empresas começaram a reconhecer o potencial comercial da web, à medida que a infraestrutura de rede crescia para acomodar o que provaria ser um influxo maciço de atividade online . Então, a bolha da tecnologia cresceu e explodiu, cujos sobreviventes (Google, Amazon e similares) deixaram de ser os principais influenciadores da tecnologia e se tornaram verdadeiros gigantes corporativos em cerca de uma década.
+                </p>
+                <p class="text">
+                    Em 1989, Tim Berners-Lee (então pesquisador do Laboratório CERN na Europa) esboçou seu conceito de plataforma de computador que poderia facilitar a colaboração entre pesquisadores baseados em diferentes partes do mundo. Isso levou à invenção da Hypertext Markup Language (HTML) em 1990. Fortemente baseado na SGML (Standard Generalized Markup Language), o HTML se tornou o bloco de construção fundamental da World Wide Web e permanece no centro de sua codificação e infraestrutura. . O padrão habilitou os codificadores com a capacidade de organizar layouts de páginas da web que pudessem ser entendidos e interagidos com redes interconectadas. (Para saber mais sobre o desenvolvimento da Web, consulte As 6 linguagens de programação que construíram a Internet.)
+                </p>
+                <p>
+                    <footer class="blockquote-footer">
+                        Do site: <a href="https://pt.theastrologypage.com">pt.theastrologypage.com</a>
+                    </footer>
+                </p>
+            </div>
+        </div>
+        <div class="tab-pane container fade text-center container" id="menu1">
+            <p>
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                    <a href="" onClick="NewGame(); return false;"
+                        onMouseOver="window.status='Inicie um novo jogo'; return true;"
+                        onMouseOut="window.status=''; return true;" title="Inicie um novo jogo" class="nav-link">
+                        Novo Jogo
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="" onClick="TakeBack(-1); return false;"
+                        onMouseOver="window.status='Reiniciar'; return true;"
+                        onMouseOut="window.status=''; return true;" title="Reiniciar" class="nav-link">
+                        Reiniciar
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="" onClick="TakeBack(1); return false;"
+                        onMouseOver="window.status='Anular o último movimento'; return true;"
+                        onMouseOut="window.status=''; return true;" title="Anular o último movimento" class="nav-link">
+                        Anular
+                    </a>
+                </li>
+            </ul>
+            </p>
+            <form action="" method="get" enctype="application/x-www-form-urlencoded">
+                <script type="text/javascript">
+                    for (y = 0; y < Size; y++, window.document.write("<br>"))
+                        for (x = 0; x < Size; x++)
+                            window.document.write('<input type="button" value="" onClick="Clicked(' + x + ',' + y + ')">');
+                </script>
+                <p>
+                    Definições de dificuldade
+                    <select name="Difficulty" onChange="NewGame()">
+                        <option>Hum, o quê?</option>
+                        <option>Muito, muito fácil</option>
+                        <option>Mesmo fácil</option>
+                        <option>Fácil</option>
+                        <option selected>Normal</option>
+                        <option>Difícil</option>
+                        <option>Mesmo difícil</option>
+                        <option>Mestre</option>
+                        <option>Impossível</option>
+                    </select>
+                </p>
+                <p>
+                    Cliques usados:
+                    <input type="text" name="Score" value="0" size="3" disabled>
+                </p>
+            </form>
+            <dl>
+                <dt>Como jogar:</dt>
+                <dd>Clique em um dos botões no campo de<br> jogo
+                    para diminuir o valor desse botão<br> em 1,
+                    bem como os valores dos 4 vizinhos.
+                </dd>
+                <dt>Objetivo:</dt>
+                <dd>Mude todos os botões para "0".</dd>
+            </dl>
+        </div>
+    </div>
+    <footer class="text-center text-lg-start bg-dark text-muted">
+        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+        </section>
+        <section class="">
+            <div class="container text-center text-md-start mt-5">
+                <div class="row mt-3">
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            José Capewa
+                        </h6>
+                        <p>
+                            Um jovem adolescente com o sonho de se tornar um programador de nível profissional e um desenvolvedor Full-Stack.
+                        </p>
+                    </div>
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Linguagens
+                        </h6>
+                        <p>
+                            <a href="https://html.com" class="text-reset" target="_blank">Html</a>
+                        </p>
+                        <p>
+                            <a href="https://w3schools.com/css" class="text-reset" target="_blank">Css</a>
+                        </p>
+                        <p>
+                            <a href="https://js.com" class="text-reset" target="_blank">Javascript</a>
+                        </p>
+                        <p>
+                            <a href="https://w3schools.com/c" class="text-reset" target="_blank">C</a>
+                        </p>
+                        <p>
+                            <a href="https://w3schools.com/cpp" class="text-reset" target="_blank">C++</a>
+                        </p>
+                    </div>
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">Contacte-me</h6>
+                        <p>
+                            capewajose@gmail.com
+                        </p>
+                        <p>+244 923 615 520</p>
+                        <p>
+                            <a href="https://www.facebook.com/jose.capewa.3" class="text-reset" target="_blank">Facebook</a>
+                        </p>
+                        <p>
+                            <a href="https://www.instagram.com/capewajose56" class="text-reset" target="_blank">Instagram</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2022 Copyright: José Capewa
+        </div>
+    </footer>
+</body>
+
+</html>
